@@ -229,4 +229,9 @@ else
 include vendor/aim/sdclang/sdclang.mk
 endif
 
+# GApps
+ifeq ($(WITH_GAPPS),true)
+include vendor/pixelgapps/pixel-gapps.mk
+endif
+
 $(call inherit-product-if-exists, vendor/extra/product.mk)

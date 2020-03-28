@@ -26,6 +26,11 @@ endif
 # Set all versions
 AIM_VERSION := AIM-$(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)-$(AIM_BUILD)-$(shell date -u +%Y%m%d-%H%M)
 
+#Gapps version
+ifeq ($(WITH_GAPPS),true)
+AIM_VERSION := AIM-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)-GApps-$(AIM_BUILD)-$(shell date -u +%Y%m%d-%H%M)
+endif
+
 AIM_DISPLAY_VERSION := AIM-$(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)
 
 AIM_MOD_VERSION := $(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)
