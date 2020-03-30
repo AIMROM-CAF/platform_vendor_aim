@@ -19,7 +19,7 @@ PRODUCT_BRAND ?= AIMROM
 AIM_BASE_VERSION = System-V5.0
 
 ifndef AIM_BUILD_TYPE
-    AIM_BUILD_TYPE := UNOFFICIAL
+    AIM_BUILD_TYPE := Unofficial
 endif
 
 # Set all versions

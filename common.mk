@@ -1,3 +1,5 @@
+include vendor/aim/config/version.mk
+
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
@@ -206,7 +208,7 @@ PRODUCT_PACKAGES += \
 # Pixel Launcher
 PRODUCT_PACKAGES += \
     NexusLauncherPrebuilt \
-    
+
 # WallpaperPicker
 PRODUCT_PACKAGES += \
     WallpaperPickerPrebuilt
@@ -214,9 +216,6 @@ PRODUCT_PACKAGES += \
 # Screen recorder
 PRODUCT_PACKAGES += \
     Recorder
-
-# Versioning
-include vendor/aim/config/version.mk
 
 ifneq ($(HOST_OS),linux)
 ifneq ($(sdclang_already_warned),true)
