@@ -23,13 +23,13 @@ ifndef AIM_BUILD_TYPE
     AIM_BUILD_TYPE := Unofficial
 endif
 
-# Set all versions
-AIM_VERSION := AIM-$(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)-$(AIM_BUILD)-$(shell date -u +%Y%m%d-%H%M)
-
-#Gapps version
+# GApps
 ifeq ($(WITH_GAPPS),true)
-AIM_VERSION := AIM-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)-GApps-$(AIM_BUILD)-$(shell date -u +%Y%m%d-%H%M)
+GAPPS := -GApps
 endif
+
+# Set all versions
+AIM_VERSION := AIM-$(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)$(GAPPS)-$(AIM_BUILD)-$(shell date -u +%Y%m%d-%H%M)
 
 AIM_DISPLAY_VERSION := AIM-$(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)
 
