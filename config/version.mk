@@ -18,6 +18,7 @@ PRODUCT_BRAND ?= AIMROM
 
 AIM_BASE_NAME = System
 AIM_BASE_VERSION = V5.0
+AIM_ZIP_TYPE = Lucid
 
 ifndef AIM_BUILD_TYPE
     AIM_BUILD_TYPE := Unofficial
@@ -25,11 +26,11 @@ endif
 
 # GApps
 ifeq ($(WITH_GAPPS),true)
-GAPPS := -GApps
+AIM_ZIP_TYPE := GApps
 endif
 
 # Set all versions
-AIM_VERSION := AIM-$(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)$(GAPPS)-$(AIM_BUILD)-$(shell date -u +%Y%m%d-%H%M)
+AIM_VERSION := AIM-$(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)-$(AIM_ZIP_TYPE)-$(AIM_BUILD)-$(shell date -u +%Y%m%d-%H%M)
 
 AIM_DISPLAY_VERSION := AIM-$(AIM_BASE_NAME)-$(AIM_BASE_VERSION)-$(AIM_BUILD_TYPE)
 
@@ -40,7 +41,8 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     BUILD_DISPLAY_ID=$(BUILD_ID) \
     ro.aim.version=$(AIM_VERSION) \
     ro.aim.build.version=$(AIM_BASE_VERSION) \
-    ro.mod.version=$(AIM_MOD_VERSION)
+    ro.mod.version=$(AIM_MOD_VERSION) \
+    ro.aim.ziptype=$(AIM_ZIP_TYPE)
 
 # Display version
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
