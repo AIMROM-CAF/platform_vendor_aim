@@ -14,14 +14,10 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-# Lineage OTA update package
+# AIM OTA update package
 ifneq ($(BUILD_WITH_COLORS),0)
   CL_RED="\033[31m"
   CL_GRN="\033[32m"
-  CL_YLW="\033[33m"
-  CL_BLU="\033[34m"
-  CL_MAG="\033[35m"
-  CL_CYN="\033[36m"
   CL_RST="\033[0m"
 endif
 
@@ -31,21 +27,16 @@ AIM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(AIM_VERSION).zip
 bacon: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(AIM_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(AIM_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(AIM_TARGET_PACKAGE).md5sum
-	@echo -e ${CL_RED} "" ${CL_RED}
-	@echo -e ${CL_RED} "       d8888 8888888 888b     d888     8888888b.   .d88888b.  888b     d888 "
-	@echo -e ${CL_RED} "      d88888   888   8888b   d8888     888   Y88b d88P' 'Y88b 8888b   d8888 "
-	@echo -e ${CL_RED} "     d88P888   888   88888b.d88888     888    888 888     888 88888b.d88888 "
-	@echo -e ${CL_RED} "    d88P 888   888   888Y88888P888     888   d88P 888     888 888Y88888P888 "
-	@echo -e ${CL_RED} "   d88P  888   888   888 Y888P 888     8888888P   888     888 888 Y888P 888 "
-	@echo -e ${CL_RED} "  d88P   888   888   888  Y8P  888     888 T88b   888     888 888  Y8P  888 "
-	@echo -e ${CL_RED} " d8888888888   888   888   '   888     888  T88b  Y88b. .d88P 888   '   888 "
-	@echo -e ${CL_RED} "d88P     888 8888888 888       888     888   T88b  'Y88888P'  888       888 "
-	@echo -e ${CL_RED} "                                                                            "
-	@echo -e ${CL_RED} "" ${CL_RED}
-	@echo -e ${CL_BLD}${CL_GRN}"             	  Build completed! Now Flash the Rom and ENJOY!!  " ${CL_GRN}
-	@echo -e ${CL_BLD}${CL_GRN}" ============================================================================================================" ${CL_GRN}
-	@echo -e ${CL_BLD}${CL_RED}"       		AIM ROM is based on Android 10.x developed by TEAM-AIM 	 " ${CL_RED}
-	@echo -e ${CL_BLD}${CL_BLU}" =====================================-Package complete-=====================================================" ${CL_BLU}
-	@echo -e ${CL_BLD}${CL_GRN}" zip: $(AIM_TARGET_PACKAGE)" ${CL_GRN}
-	@echo -e ${CL_BLD}${CL_RED}" ============================================================================================================" ${CL_RED}
-
+	@echo -e " "
+	@echo -e ${CL_RED}"           d8888 8888888 888b     d888 8888888b.   .d88888b.  888b     d888    "${CL_RST}
+	@echo -e ${CL_RED}"          d88888   888   8888b   d8888 888   Y88b d88P' 'Y88b 8888b   d8888    "${CL_RST}
+	@echo -e ${CL_RED}"         d88P888   888   88888b.d88888 888    888 888     888 88888b.d88888    "${CL_RST}
+	@echo -e ${CL_RED}"        d88P 888   888   888Y88888P888 888   d88P 888     888 888Y88888P888    "${CL_RST}
+	@echo -e ${CL_RED}"       d88P  888   888   888 Y888P 888 8888888P   888     888 888 Y888P 888    "${CL_RST}
+	@echo -e ${CL_RED}"      d88P   888   888   888  Y8P  888 888 T88b   888     888 888  Y8P  888    "${CL_RST}
+	@echo -e ${CL_RED}"     d8888888888   888   888   '   888 888  T88b  Y88b. .d88P 888   '   888    "${CL_RST}
+	@echo -e ${CL_RED}"    d88P     888 8888888 888       888 888   T88b  'Y88888P'  888       888    "${CL_RST}
+	@echo -e " "
+	@echo -e ${CL_GRN}"Package complete:"${CL_RST} >&2
+	@echo -e "Name: $(AIM_VERSION).zip" >&2
+	@echo -e "MD5 : `cat $(AIM_TARGET_PACKAGE).md5sum | awk '{print $$1}'`" >&2
