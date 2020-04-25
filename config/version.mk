@@ -18,7 +18,6 @@ PRODUCT_BRAND ?= AIMROM
 
 AIM_BASE_NAME = System
 AIM_BASE_VERSION = V5.0
-AIM_ZIP_TYPE = Lucid
 
 ifndef AIM_BUILD_TYPE
     AIM_BUILD_TYPE := Unofficial
@@ -27,6 +26,8 @@ endif
 # GApps
 ifeq ($(WITH_GAPPS),true)
 AIM_ZIP_TYPE := GApps
+else
+AIM_ZIP_TYPE := Lucid
 endif
 
 # Set all versions
