@@ -6,12 +6,12 @@ import (
 	"android/soong/android"
 )
 
-func reloadedExpandVariables(ctx android.ModuleContext, in string) string {
-	reloadedVars := ctx.Config().VendorConfig("reloadedVarsPlugin")
+func aimExpandVariables(ctx android.ModuleContext, in string) string {
+	aimVars := ctx.Config().VendorConfig("aimVarsPlugin")
 
 	out, err := android.Expand(in, func(name string) (string, error) {
-		if reloadedVars.IsSet(name) {
-			return reloadedVars.String(name), nil
+		if aimVars.IsSet(name) {
+			return aimVars.String(name), nil
 		}
 		// This variable is not for us, restore what the original
 		// variable string will have looked like for an Expand

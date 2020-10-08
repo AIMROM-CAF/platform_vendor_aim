@@ -6,10 +6,10 @@ endif
 # Disable qmi EAP-SIM security
 DISABLE_EAP_PROXY := true
 
-include vendor/reloaded/config/BoardConfigKernel.mk
+include vendor/aim/config/BoardConfigKernel.mk
 
 ifeq ($(BOARD_USES_QCOM_HARDWARE),true)
-include vendor/reloaded/config/BoardConfigQcom.mk
+include vendor/aim/config/BoardConfigQcom.mk
 endif
 
-include vendor/reloaded/config/BoardConfigSoong.mk
+include vendor/aim/config/BoardConfigSoong.mk

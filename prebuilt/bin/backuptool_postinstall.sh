@@ -1,6 +1,6 @@
 #!/system/bin/sh
 #
-# ReloadedOS A/B OTA Postinstall Script
+# AIM A/B OTA Postinstall Script
 #
 
 /postinstall/system/bin/backuptool_ab.sh backup
